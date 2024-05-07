@@ -37,6 +37,57 @@
 
     </style>
 
+  <script>
+
+    function showAlert() {
+      alert("На честь Великодня оголошуємо конкурс з виготовлення Паски. Надсилайте нам фото на пошту aaa@ukr.net, і отримайте можливість виграти приз!");
+    }
+
+    function showPrompt() {
+      var name = prompt("Будь ласка, введіть ваше ім'я:");
+      if (name != null && name != "") {
+        alert("Привіт, " + name + "! Ласкаво просимо до нашого сайту!");
+      }
+    }
+
+    function showConfirm() {
+      var result = confirm("Ви хочете стати учасником гастрономічного туру?");
+      if (result == true) {
+        alert("Чудово! Напишіть нам на пошту aaa@ukr.net, і ми вам допоможемо!");
+      } else {
+        alert("Якщо передумаєте, напишіть нам на пошту aaa@ukr.net");
+      }
+    }
+
+    function showDeveloperInfo(lastName, firstName, position = "веб-розробник") {
+    alert("Ім'я: " + firstName + "\nПрізвище: " + lastName + "\nПосада: " + position);
+    }
+
+    function compareStrings() {
+      var str1 = document.getElementById("string1").value;
+      var str2 = document.getElementById("string2").value;
+
+      if (str1.length > str2.length) {
+          alert("Перший рядок довший: " + str1);
+      } else if (str2.length > str1.length) {
+          alert("Другий рядок довший: " + str2);
+      } else {
+          alert("Рядки мають однакову довжину.");
+      }
+     }
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+            document.body.style.backgroundColor = "lightgreen";
+
+            setTimeout(function() {
+                document.body.style.backgroundColor = "";
+            }, 30000); 
+        });
+
+
+  </script>
+
   <title>Туристичні Кулінарні Подорожі - Головна</title>
 
 </head>
@@ -45,7 +96,22 @@
 
   <h1>Ласкаво просимо до Туристичних Кулінарних Подорожей!</h1>
 
-<a href="https://canapeclub.ru/image/catalog/blog/kuhni_mira/kuhni_mira_preview.jpg" target="_blank">
+  <script src="dialog.js"></script>
+
+  <button onclick="showAlert()">Конкурс</button>
+  <button onclick="showPrompt()">Як вас звати?</button>
+  <button onclick="showConfirm()">Опитування</button>
+  <button onclick="dialogWithUser()">Розпочати діалог</button>
+  <button onclick="showDeveloperInfo('Габрись', 'Олексій', 'Frontend розробник')">Інформація про розробника</button>
+  <button onclick="compareStrings()">Порівняти рядки</button>
+
+    <p><label for="string1">Перший рядок:</label></p>
+    <input type="text" id="string1"><br><br>
+
+    <p><label for="string2">Другий рядок:</label></p>
+    <input type="text" id="string2"><br><br>
+
+<a href="https://canapeclub.ru/image/catalog/blog/kuhni_mira/kuhni_mira_preview.jpg" target="_blank" style="display: block; margin-top: 0px;">
   <img src="https://canapeclub.ru/image/catalog/blog/kuhni_mira/kuhni_mira_preview.jpg" alt="Зображення страви" width="50%" height="50%" style="display: block; margin: auto;" />
 </a>
 
@@ -88,6 +154,7 @@
         <p><a href="regions.html">Дізнайтеся більше про кухні світу</a></p>
     </div>
 </div>
+
 
 
 </body>

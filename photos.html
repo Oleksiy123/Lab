@@ -12,6 +12,49 @@
 
   <h1>Фото</h1>
 
+    <button id="redirectButton">Перенаправити</button>
+
+    <button onclick="changeInnerHTML()">Змінити innerHTML</button>
+    <button onclick="changeOuterHTML()">Змінити outerHTML</button>
+    <button onclick="changeNodeValue()">Змінити nodeValue</button>
+    <button onclick="changeTextContent()">Змінити textContent</button>
+
+    <div id="exampleElement">Вітаємо <strong>вас на вкладці з фотографіями</strong>!</div>
+
+    <script>
+
+        var button = document.getElementById("redirectButton");
+
+        button.addEventListener("click", function() {
+
+            location.href = "https://www.example.com";
+        });
+
+        var element = document.getElementById("exampleElement");
+
+        function changeInnerHTML() {
+
+            element.innerHTML = "Раді бачити <em> вас</em>!";
+        }
+
+        function changeOuterHTML() {
+
+            element.outerHTML = "<p>Сподіваємося, що фото вам сподобаються!</p>";
+        }
+
+        function changeNodeValue() {
+
+            var textNode = element.firstChild; // Отримуємо перший дочірній вузол (текстовий)
+            textNode.nodeValue = "Зустрічаємо ";
+        }
+
+        function changeTextContent() {
+
+            element.textContent = "Можете також поділитися фото з нами!";
+        }
+
+    </script>
+
 <p>Поглибіться в атмосферу наших подорожей, оглядаючи найяскравіші моменти в розділі "Фотогалерея". Кожна фотографія – це кадр із життя наших кулінарних відкриттів. Від кольорових базарів до вишуканих ресторанів – кожен куток світу на вашому екрані.</p>
 
 
